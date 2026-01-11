@@ -1,4 +1,6 @@
 import './globals.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import React from 'react';
 import type {Metadata} from 'next';
 
@@ -8,11 +10,17 @@ export const metadata: Metadata = {
   authors: [{name: 'Taksha Engineering Pte Ltd'}],
 };
 
-export default function RootLayout({children}:{children:React.ReactNode}){
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
