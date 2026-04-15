@@ -48,9 +48,17 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Optional Map Placeholder */}
-            <div className="mt-8 rounded-xl bg-gray-100 h-56 flex items-center justify-center text-gray-400">
-              Map integration (optional)
+            {/* Google Map (responsive) */}
+            <div className="mt-8 rounded-xl overflow-hidden h-56 md:h-72 shadow-sm">
+              <iframe
+                title="Taksha Engineering Location"
+                src="https://www.google.com/maps?q=12%20Lorong%20Bakar%20Batu%2C%20%2302-01%20Singapore%20348745&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 

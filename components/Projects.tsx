@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const items = [
-  { title: 'Town Council Painting Work', img: '/expertise-1.png' },
-  { title: 'Tension Membrane Work', img: '/expertise-2.png' },
-  { title: 'Roofing Work', img: '/expertise-3.png' }
+  { title: 'Town Council Painting Work', img: '/expertise-1.png', slug: 'painting' },
+  { title: 'Tension Membrane Work', img: '/expertise-2.png', slug: 'tension' },
+  { title: 'Roofing Work', img: '/expertise-3.png', slug: 'roofing' }
 ];
 
 export default function Projects(){
@@ -23,7 +24,7 @@ export default function Projects(){
                 <Image src={it.img} alt={it.title} fill style={{objectFit: 'cover'}} className="block" />
               </div>
               <div className="p-4 pt-3 text-right">
-                <a href="#" className="text-sm lowercase text-[var(--taksha-blue)] pr-4 hover:underline">more...</a>
+                <Link href={`/services#${it.slug}`} className="text-sm lowercase text-[var(--taksha-blue)] pr-4 hover:underline">more...</Link>
               </div>
             </div>
           ))}
