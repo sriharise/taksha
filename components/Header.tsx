@@ -29,19 +29,14 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const [activeHash, setActiveHash] = useState<string>('');
+  
 
   useEffect(() => {
     setOpen(false);
     setServicesOpen(false);
   }, [pathname]);
 
-  useEffect(() => {
-    const updateHash = () => setActiveHash(window.location.hash);
-    updateHash();
-    window.addEventListener('hashchange', updateHash);
-    return () => window.removeEventListener('hashchange', updateHash);
-  }, []);
+  
 
   useEffect(() => {
     if (open && window.innerWidth < 768) document.body.style.overflow = "hidden";
@@ -59,7 +54,7 @@ export default function Header() {
         {/* Top ribbon */}
         <div className="hidden lg:block bg-[var(--taksha-blue)] text-white text-xs">
           <div className="container mx-auto flex justify-between py-2 px-4">
-            <span>BCA Registered • bizSAFE Star • ISO 9001 • ISO 45001</span>
+            <span></span>
             <span className="flex gap-4">
               <a href={SITE_INFO.emailHref} className="flex items-center gap-1 text-white hover:underline">
                 <svg className="w-4 h-4 text-[var(--taksha-orange)]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -106,11 +101,11 @@ export default function Header() {
                   <div className="rounded-2xl bg-white shadow-xl p-6">
                     <div className="grid grid-cols-2 gap-4">
                       {SERVICES.map((s) => {
-                        const isActiveService = activeHash === `#${s.slug}`;
+                        const isActiveService = pathname === `/services/${s.slug}`;
                         return (
                           <Link
                             key={s.slug}
-                            href={`/services#${s.slug}`}
+                            href={`/services/${s.slug}`}
                             className={`group flex items-center gap-2 ${isActiveService ? "text-[var(--taksha-orange)] font-semibold" : "hover:text-[var(--taksha-orange)]"}`}
                           >
                             <ToolIcon />
@@ -124,14 +119,16 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/projects" className={`${pathname === '/projects' ? 'text-[var(--taksha-orange)] font-semibold' : 'hover:text-[var(--taksha-orange)]'}`}>Projects</Link>
+            
             <Link href="/contact" className={`${pathname === '/contact' ? 'text-[var(--taksha-orange)] font-semibold' : 'hover:text-[var(--taksha-orange)]'}`}>Contact</Link>
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:flex">
-            <Link href="/contact" className="px-5 py-2 rounded-lg bg-[var(--taksha-orange)] text-white text-sm font-semibold">Request Site Assessment</Link>
-          </div>
+          {/* CTA (hidden on Services pages) */}
+          {!isServicesPage && (
+            <div className="hidden md:flex">
+              <Link href="/contact" className="px-5 py-2 rounded-lg bg-[var(--taksha-orange)] text-white text-sm font-semibold">Request Site Assessment</Link>
+            </div>
+          )}
 
           {/* Mobile icons */}
           <div className="md:hidden flex items-center gap-3">
@@ -162,11 +159,11 @@ export default function Header() {
             <div className={`overflow-hidden transition-all duration-300 ${servicesOpen ? "max-h-[600px]" : "max-h-0"}`}>
               <div className="pl-4 bg-gray-50 rounded-lg">
                 {SERVICES.map((s) => {
-                  const isActive = activeHash === `#${s.slug}` || pathname === `/services` && activeHash === '' && s.slug === SERVICES[0].slug;
+                  const isActive = pathname === `/services/${s.slug}`;
                   return (
                     <Link
                       key={s.slug}
-                      href={`/services#${s.slug}`}
+                      href={`/services/${s.slug}`}
                       className={`group flex items-center gap-2 py-2 border-b text-sm ${isActive ? 'text-[var(--taksha-orange)] font-semibold' : ''}`}
                     >
                       <ToolIcon />
@@ -177,7 +174,7 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/projects" className="block py-3 border-b">Projects</Link>
+            
             <Link href="/contact" className="block py-3">Contact</Link>
           </nav>
         </div>

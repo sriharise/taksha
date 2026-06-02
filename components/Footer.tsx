@@ -15,7 +15,7 @@ export default function Footer() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 text-sm text-white/90">
               {SERVICES.map((service) => (
                 <li key={service.slug} className="hover:text-[var(--taksha-orange)] transition-colors">
-                  <a href={`/services#${service.slug}`}>{service.label}</a>
+                  <a href={`/services/${service.slug}`}>{service.label}</a>
                 </li>
               ))}
             </ul>
@@ -65,7 +65,7 @@ export default function Footer() {
           <ul className="flex flex-wrap gap-4 text-sm text-white/60">
             <li><a href="/" className="hover:text-[var(--taksha-orange)]">Home</a></li>
             <li><a href="/about" className="hover:text-[var(--taksha-orange)]">About</a></li>
-            <li><a href="/projects" className="hover:text-[var(--taksha-orange)]">Projects</a></li>
+            
             <li><a href="/contact" className="hover:text-[var(--taksha-orange)]">Contact</a></li>
             <li><a href="/privacy-policy" className="hover:text-[var(--taksha-orange)]">Privacy Policy</a></li>
             <li><a href="/terms-and-conditions" className="hover:text-[var(--taksha-orange)]">Terms & Conditions</a></li>

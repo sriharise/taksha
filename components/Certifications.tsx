@@ -7,7 +7,7 @@ import ISO9001 from '../images/iso_2015.jpg';
 import ISO45001 from '../images/iso_2018.jpg';
 
 const certs = [
-  {img: BCA, title: 'BCA Workhead CR09 (L3)'},
+  {img: BCA, title: 'BCA Workhead CR09 (L4)'},
   {img: BCA, title: 'BCA Workhead CR13 (L1)'},
   {img: Biz, title: 'BizSafe Star'},
   {img: ISO9001, title: 'ISO 9001:2015'},

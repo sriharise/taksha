@@ -1,58 +1,68 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_INFO } from '../../config/siteConfig';
 
 export default function AboutPage() {
   return (
     <main className="pt-32">
       {/* Hero Section */}
-      <section className="bg-gray-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[var(--taksha-blue)] to-[var(--taksha-orange)] bg-clip-text text-transparent mb-4">
+
+      {/* Company Overview - hero banner style using Aboutus.jpg */}
+      <section className="relative w-full min-h-[24rem] md:min-h-[45vh]">
+        <div className="absolute inset-0 h-96 md:h-[45vh] -z-10">
+          <Image src="/Aboutus.jpg" alt="About us" fill style={{objectFit: 'cover'}} priority />
+          <div className="absolute inset-0 bg-black/45" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 py-28 max-w-5xl text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             About {SITE_INFO.companyName}
           </h1>
-          
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section>
-        <div className="container mx-auto px-4 py-8 max-w-5xl space-y-4">
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Taksha Engineering Pte Ltd is a Singapore-based company specializing in repair and redecoration works, renovation services and comprehensive painting services for commercial, industrial, and residential properties.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            With over 10 years of industry experience, we have established ourselves as a trusted contractor known for delivering quality workmanship and reliable service. Our portfolio includes a wide range of successfully completed projects across both private and public sectors, including residential units, industrial buildings, hospitals, and landed properties.
-          </p>
+      {/* Company Overview - concise bullets with safety box */}
+      <section className="bg-white">
+        <div className="container mx-auto px-4 py-12 max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
 
-          <p className="text-gray-700 leading-relaxed">
-            At Taksha Engineering, we are committed to meeting our clients’ needs with professionalism, efficiency, and attention to detail—ensuring every project is completed to the highest standards.
-          </p>
+            <div>
+              <ul className="space-y-5 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-2xl">🏗️</span>
+                  <span className="font-medium">Over a decade of specialist repairs, reinstatement and engineering delivery.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-2xl">🏭</span>
+                  <span className="font-medium">In-house fabrication for tighter quality control and faster turnarounds.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-2xl">🛡️</span>
+                  <span className="font-medium">Certified teams and method-led execution prioritising safety on live sites.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-2xl">🤝</span>
+                  <span className="font-medium">Trusted by public and private sector clients across Singapore.</span>
+                </li>
+              </ul>
+            </div>
 
-          <p className="text-gray-700 leading-relaxed">
-            Established in 2017, Taksha Engineering has grown into a strong multi-disciplinary company with expertise across a wide range of construction trade works and projects.
-          </p>
-
-          <p className="text-gray-700 leading-relaxed">
-            We operate our own fabrication facility located at Blk 12, Lorong Bakar Batu, enabling us to maintain strict quality control, efficient production, and timely project delivery.
-          </p>
-
-          <p className="text-gray-700 leading-relaxed">
-            Our team comprises experienced technical personnel and a highly skilled workforce who are well-equipped to manage complex designs and technical challenges. We work both independently and collaboratively with our clients to deliver practical, cost-effective, and high-quality solutions.
-          </p>
-
-          <div>
-            <p className=" mb-3">Taksha Engineering is committed to maintaining high industry standards and safety compliance:</p>
-            <ul className="list-disc pl-5 text-gray-700 space-y-1">
-              <li className='font-semibold text-[var(--taksha-blue)]'>BCA Registered Contractor</li>
-                <ul>
+            <aside className="flex justify-end">
+              <div className="w-full md:w-3/4 bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg border">
+                <h4 className="font-semibold text-[var(--taksha-blue)] mb-3">Safety & Compliance</h4>
+                <p className="text-sm text-gray-600 mb-3">We hold certifications and registrations that reflect our commitment to safe, compliant delivery.</p>
+                <ul className="list-none space-y-2 text-gray-700">
+                  <li className="font-semibold text-[var(--taksha-blue)]">BCA Registered Contractor</li>
                   <li>CR09 – Repairs & Redecoration - L4</li>
                   <li>CR13 – Waterproofing Installation - L1</li>
+                  <li className="font-semibold text-[var(--taksha-blue)]">BizSAFE Star Certified</li>
+                  <li className="font-semibold text-[var(--taksha-blue)]">ISO 45000:2018</li>
+                  <li className="font-semibold text-[var(--taksha-blue)]">ISO 90001:2015</li>
                 </ul>
-              <li className='font-semibold text-[var(--taksha-blue)]'>BizSAFE Star Certified</li>
-              <li className='font-semibold text-[var(--taksha-blue)]'>ISO 45000:2018</li>
-              <li className='font-semibold text-[var(--taksha-blue)]'>ISO 90001:2015</li>
-            </ul>
+              </div>
+            </aside>
+
           </div>
         </div>
       </section>
@@ -61,7 +71,7 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="container mx-auto px-4 py-16 max-w-5xl grid md:grid-cols-2 gap-10">
           <div>
-            <h3 className="text-xl font-semibold text-[var(--taksha-blue)] mb-3">OUR VISION</h3>
+            <h3 className="text-xl font-semibold text-[var(--taksha-blue)] mb-3">🎯 OUR VISION</h3>
             <ul className="text-gray-700 space-y-2">
               <li>To strive to deliver our services with the highest quality, executing efficiently and in a timely manner to ensure maximum customer satisfaction.</li>
               <li>To be a value-added partner to our suppliers, contractors, and customers.</li>
@@ -69,7 +79,7 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-[var(--taksha-blue)] mb-3">OUR MISSION</h3>
+            <h3 className="text-xl font-semibold text-[var(--taksha-blue)] mb-3">⚙️ OUR MISSION</h3>
             <ul className="text-gray-700 space-y-2">
               <li>To provide excellent products and services with prompt delivery and competitive pricing.</li>
               <li>To achieve customer satisfaction through a “zero-defect” mindset, driven by teamwork, innovation, and continuous improvement.</li>
@@ -136,10 +146,13 @@ export default function AboutPage() {
           </p>
           <div className="text-center">
             <Link
-              href="/contact"
-              className="inline-block px-6 py-3 rounded-lg bg-[var(--taksha-orange)] text-white font-semibold hover:opacity-90"
+              href="tel:+6569709355"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--taksha-orange)] text-white font-semibold hover:opacity-90"
             >
-              Request Site Assessment
+              <svg aria-hidden="true" focusable="false" className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.62 10.79a15.054 15.054 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.07 21.5 2.5 13.93 2.5 3a1 1 0 0 1 1-1H7a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.01l-2.71 2.21z" fill="white" />
+              </svg>
+              +65 6970 9355
             </Link>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function Services(){
   return (
     <section id="services" className="py-16">
       <div className="container">
-        <h2 className="text-2xl font-semibold text-[var(--taksha-blue)]">Services</h2>
+        <h2 className="text-2xl font-semibold text-[var(--taksha-blue)]">Our Services</h2>
         <p className="mt-2 text-gray-600 max-w-2xl">We provide a wide range of civil and specialist engineering services tailored for public and private sectors.</p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">

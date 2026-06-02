@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import WhyChoose from '../components/WhyChoose';
-import Projects from '../components/Projects';
+import Services from '../components/Services';
+import WhyUs from '../components/WhyUs';
 import Certifications from '../components/Certifications';
 
 export default function Page(){
@@ -9,9 +9,9 @@ export default function Page(){
     <>
       <main className="pt-24">
         <Hero />
-        <WhyChoose />
+        <Services />
         <Certifications />
-        <Projects />
+        <WhyUs />
       </main>
     </>
   );

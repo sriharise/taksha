@@ -6,12 +6,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const SLIDES = [
-  { id: 1, img: '/slider/slide-1.jpg', title: 'Singapore’s Trusted Experts in Demolition & Remediation', subtitle: 'Method statements, risk controls and zero-harm execution for live-site works.' },
-  { id: 2, img: '/slider/slide-2.jpg', title: 'Precision Reinstatement & Make-Good', subtitle: 'Hand-over ready finishes to landlord and tenant standards.' },
-  { id: 3, img: '/slider/slide-3.jpg', title: 'Certified Fire-Rated Systems Installation', subtitle: 'Fire-rated glass, ceilings and partitions with certified installers.' },
-  { id: 4, img: '/slider/slide-4.jpg', title: 'Tension Membranes & Canopies', subtitle: 'Design–supply–install solutions for industrial and commercial roofing.' },
-  { id: 5, img: '/slider/slide-5.jpg', title: 'Leak & Roof Works', subtitle: 'Durable repairs, replacements and long-term maintenance programs.' },
-  { id: 6, img: '/slider/slide-6.jpg', title: 'Bird Netting & Access Solutions', subtitle: 'Humane protection and efficient access systems for large facilities.' }
+  { id: 1, img: '/slider/slide-1.jpg', title: 'Dummy Slide Title 1', subtitle: 'This is a placeholder description for slide 1.' },
+  { id: 2, img: '/slider/slide-2.jpg', title: 'Dummy Slide Title 2', subtitle: 'This is a placeholder description for slide 2.' },
+  { id: 3, img: '/slider/slide-3.jpg', title: 'Dummy Slide Title 3', subtitle: 'This is a placeholder description for slide 3.' },
+  { id: 4, img: '/slider/slide-4.jpg', title: 'Dummy Slide Title 4', subtitle: 'This is a placeholder description for slide 4.' },
+  { id: 5, img: '/slider/slide-5.jpg', title: 'Dummy Slide Title 5', subtitle: 'This is a placeholder description for slide 5.' },
+  { id: 6, img: '/slider/slide-6.jpg', title: 'Dummy Slide Title 6', subtitle: 'This is a placeholder description for slide 6.' }
 ];
 
 // Certificates removed from hero slides per request
@@ -24,7 +24,7 @@ export default function Hero(){
     return () => clearInterval(interval);
   }, []);
 
-  const first = SLIDES[0];
+  const current = SLIDES[index];
 
   return (
     <section id="home" className="relative w-full overflow-hidden">
@@ -53,9 +53,9 @@ export default function Hero(){
 
                 {/* Blurred dark panel sized to content with 20px padding */}
                 <div className="relative z-10 bg-black/50 backdrop-blur-sm rounded-lg p-5 md:p-8 inline-block">
-                  <h1 className="text-2xl md:text-4xl font-extrabold leading-tight">{first.title}</h1>
+                  <h1 className="text-2xl md:text-4xl font-extrabold leading-tight">{current.title}</h1>
                   <span className="block mt-3 h-1 w-28 bg-[var(--taksha-orange)] rounded" aria-hidden="true" />
-                  <p className="mt-4 text-sm md:text-base text-white/90">{first.subtitle}</p>
+                  <p className="mt-4 text-sm md:text-base text-white/90">{current.subtitle}</p>
 
                   <div className="mt-6 flex items-center gap-4">
                     <Link href="/services"><Button>View Our Services</Button></Link>
