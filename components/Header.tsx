@@ -123,12 +123,7 @@ export default function Header() {
             <Link href="/contact" className={`${pathname === '/contact' ? 'text-[var(--taksha-orange)] font-semibold' : 'hover:text-[var(--taksha-orange)]'}`}>Contact</Link>
           </nav>
 
-          {/* CTA (hidden on Services pages) */}
-          {!isServicesPage && (
-            <div className="hidden md:flex">
-              <Link href="/contact" className="px-5 py-2 rounded-lg bg-[var(--taksha-orange)] text-white text-sm font-semibold">Request Site Assessment</Link>
-            </div>
-          )}
+          {/* CTA removed site-wide */}
 
           {/* Mobile icons */}
           <div className="md:hidden flex items-center gap-3">
