@@ -1,4 +1,4 @@
-# Taksha Engineering — Website
+# Taksha Engineering Pvt. Ltd. — Website
 
 One-page Next.js (App Router) site scaffold built with TypeScript and Tailwind CSS.
 

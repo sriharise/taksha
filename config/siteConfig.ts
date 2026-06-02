@@ -1,7 +1,7 @@
 // config/siteConfig.ts
 
 export const SITE_INFO = {
-  companyName: 'Taksha Engineering',
+  companyName: 'Taksha Engineering Pvt. Ltd.',
   phone: '+65 6970 9355',
   phoneHref: 'tel:+6569709355',
   email: 'admin@taksha.com.sg',

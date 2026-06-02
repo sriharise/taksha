@@ -29,6 +29,16 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const formatCompanyName = (name: string) => {
+    const hasPvt = /\bpvt\.?\b/i.test(name);
+    const hasLtd = /\bltd\.?\b/i.test(name);
+    let base = name.replace(/\b(pvt\.?|pvt|ltd\.?|ltd)\b/ig, "").replace(/[.]+/g, " ").replace(/\s+/g, " ").trim();
+    const baseUpper = base.toUpperCase();
+    const suffix: string[] = [];
+    if (hasPvt) suffix.push("Pvt.");
+    if (hasLtd) suffix.push("Ltd.");
+    return [baseUpper, ...suffix].join(" ").trim();
+  };
   
 
   useEffect(() => {
@@ -76,8 +86,8 @@ export default function Header() {
         {/* Header bar */}
         <div className="container mx-auto flex items-center justify-between h-20 px-4">
           <Link href="/" className="flex items-center gap-3">
-            <Image src={TakshaLogo} alt={SITE_INFO.companyName} className="h-12 w-auto" />
-            <span className="font-semibold tracking-wide text-[var(--taksha-blue)] uppercase">{SITE_INFO.companyName}</span>
+            <Image src={TakshaLogo} alt={formatCompanyName(SITE_INFO.companyName)} className="h-12 w-auto" />
+            <span className="font-semibold tracking-wide text-[var(--taksha-blue)]">{formatCompanyName(SITE_INFO.companyName)}</span>
           </Link>
 
           {/* Desktop nav */}
