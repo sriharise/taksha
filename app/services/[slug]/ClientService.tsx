@@ -53,7 +53,6 @@ export default function ClientServiceFallback() {
 
             <div>
               <h1 className="text-3xl font-semibold text-[var(--taksha-blue)] mb-3">{service.label}</h1>
-              <p className="text-gray-700 mb-4">{service.description ?? ''}</p>
               {service.subItems && (
                 <div className="mt-6">
                   <p className="text-sm font-semibold text-[var(--taksha-blue)] mb-3">Capabilities</p>
